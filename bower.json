@@ -1,0 +1,23 @@
+{
+  "name": "open-event-frontend-theme",
+  "description": "The official theme for the Open Event Frontend",
+  "main": "",
+  "authors": [
+    "FOSSASIA"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "open",
+    "event",
+    "fossasia",
+    "semantic"
+  ],
+  "homepage": "https://github.com/niranjan94/open-event-frontend-theme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
