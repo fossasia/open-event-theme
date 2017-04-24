@@ -13,7 +13,7 @@
              Page
 *******************************/
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&subset=latin');
 html,
 body {
   height: 100%;
@@ -150,11 +150,5 @@ input::selection {
 
 /*******************************
         Global Overrides
-*******************************/
-
-
-
-/*******************************
-         Site Overrides
 *******************************/
 

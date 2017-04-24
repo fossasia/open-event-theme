@@ -634,7 +634,7 @@ a.ui.inverted.grey.header:hover {
   padding: 0.78571429rem 1rem;
   box-shadow: none;
   border: 1px solid #D4D4D5;
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
 }
 .ui.tiny.block.header {
   font-size: 0.85714286rem;
@@ -675,12 +675,12 @@ a.ui.inverted.grey.header:hover {
 }
 .ui.top.attached.header {
   margin-bottom: 0em;
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui.bottom.attached.header {
   margin-top: 0em;
   border-top: none;
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  border-radius: 0em 0em 0em 0em;
 }
 
 /* Attached Sizes */
@@ -711,11 +711,5 @@ a.ui.inverted.grey.header:hover {
 
 /*******************************
          Theme Overrides
-*******************************/
-
-
-
-/*******************************
-         Site Overrides
 *******************************/
 

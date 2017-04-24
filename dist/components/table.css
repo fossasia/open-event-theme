@@ -21,7 +21,7 @@
   margin: 1em 0em;
   border: 1px solid rgba(34, 36, 38, 0.15);
   box-shadow: none;
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
   text-align: left;
   color: rgba(0, 0, 0, 0.87);
   border-collapse: separate;
@@ -68,13 +68,13 @@
   border-left: none;
 }
 .ui.table thead tr:first-child > th:first-child {
-  border-radius: 0.28571429rem 0em 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui.table thead tr:first-child > th:last-child {
-  border-radius: 0em 0.28571429rem 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui.table thead tr:first-child > th:only-child {
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 
 /* Footer */
@@ -97,13 +97,13 @@
   border-left: none;
 }
 .ui.table tfoot tr:first-child > th:first-child {
-  border-radius: 0em 0em 0em 0.28571429rem;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui.table tfoot tr:first-child > th:last-child {
-  border-radius: 0em 0em 0.28571429rem 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui.table tfoot tr:first-child > th:only-child {
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  border-radius: 0em 0em 0em 0em;
 }
 
 /* Table Row */
@@ -555,7 +555,7 @@
   margin-bottom: 0em;
   top: 0px;
   margin-top: 1em;
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui.table[class*="top attached"]:first-child {
   margin-top: 0em;
@@ -568,7 +568,7 @@
   top: 0px;
   margin-bottom: 1em;
   box-shadow: none, none;
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui[class*="bottom attached"].table:last-child {
   margin-bottom: 0em;
@@ -1100,9 +1100,3 @@
 .ui.large.table {
   font-size: 1.1em;
 }
-
-
-/*******************************
-         Site Overrides
-*******************************/
-

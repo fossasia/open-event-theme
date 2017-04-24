@@ -42,7 +42,7 @@
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
   color: rgba(0, 0, 0, 0.87);
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
   -webkit-transition: box-shadow 0.1s ease, border-color 0.1s ease;
   transition: box-shadow 0.1s ease, border-color 0.1s ease;
   box-shadow: none;
@@ -248,7 +248,7 @@
   height: 100%;
   width: 2.67142857em;
   opacity: 0.5;
-  border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+  border-radius: 0em 0em 0em 0em;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
@@ -279,7 +279,7 @@
 .ui[class*="left icon"].input > i.icon {
   right: auto;
   left: 1px;
-  border-radius: 0.28571429rem 0em 0em 0.28571429rem;
+  border-radius: 0em 0em 0em 0em;
 }
 .ui[class*="left icon"].input > i.circular.icon {
   right: auto;
@@ -346,7 +346,7 @@
   top: 1px;
   right: 1px;
   font-size: 0.64285714em;
-  border-radius: 0em 0.28571429rem 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 
 /* Spacing with corner label */
@@ -418,7 +418,7 @@
 .ui.action.input:not([class*="left action"]) > .dropdown:last-child,
 .ui.action.input:not([class*="left action"]) > .button:last-child,
 .ui.action.input:not([class*="left action"]) > .buttons:last-child > .button {
-  border-radius: 0px 0.28571429rem 0.28571429rem 0px;
+  border-radius: 0px 0em 0em 0px;
 }
 
 /* Input Focus */
@@ -440,7 +440,7 @@
 .ui[class*="left action"].input > .dropdown:first-child,
 .ui[class*="left action"].input > .button:first-child,
 .ui[class*="left action"].input > .buttons:first-child > .button {
-  border-radius: 0.28571429rem 0px 0px 0.28571429rem;
+  border-radius: 0em 0px 0px 0em;
 }
 
 /* Input Focus */
@@ -500,11 +500,5 @@
 
 /*******************************
          Theme Overrides
-*******************************/
-
-
-
-/*******************************
-         Site Overrides
 *******************************/
 

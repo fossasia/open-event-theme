@@ -14,7 +14,7 @@
 
 @googleFontName    : @fontName;
 @importGoogleFonts : true;
-@googleFontSizes   : '400,700,400italic,700italic';
+@googleFontSizes   : '100,300,400,700,900';
 @googleSubset      : 'latin';
 
 @googleProtocol    : 'https://';
@@ -38,10 +38,10 @@
 /* See Power-user section below
    for explanation of @px variables
 */
-@relativeBorderRadius: @relative4px;
-@absoluteBorderRadius: @4px;
+@relativeBorderRadius: 0em;
+@absoluteBorderRadius: 0px;
 
-@defaultBorderRadius: @absoluteBorderRadius;
+@defaultBorderRadius: 0em;
 
 /*-------------------
     Brand Colors

@@ -51,7 +51,7 @@
   text-align: left;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
   border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
   -webkit-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease;
   z-index: 11;
@@ -217,7 +217,7 @@
   left: 100% !important;
   right: auto !important;
   margin: 0em 0em 0em -0.5em !important;
-  border-radius: 0.28571429rem !important;
+  border-radius: 0em !important;
   z-index: 21 !important;
 }
 
@@ -356,7 +356,7 @@
   color: rgba(0, 0, 0, 0.87);
   box-shadow: none;
   border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
   -webkit-transition: box-shadow 0.1s ease, width 0.1s ease;
   transition: box-shadow 0.1s ease, width 0.1s ease;
 }
@@ -406,7 +406,7 @@ select.ui.dropdown {
   margin: 0px -1px;
   min-width: calc(100% +  2px );
   width: calc(100% +  2px );
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  border-radius: 0em 0em 0em 0em;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
   -webkit-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease;
@@ -514,7 +514,7 @@ select.ui.dropdown {
 
 /* Empty Connecting Border */
 .ui.active.empty.selection.dropdown {
-  border-radius: 0.28571429rem !important;
+  border-radius: 0em !important;
   box-shadow: none !important;
 }
 .ui.active.empty.selection.dropdown .menu {
@@ -723,7 +723,7 @@ select.ui.dropdown {
 .ui.inline.dropdown .menu {
   cursor: auto;
   margin-top: 0.21428571em;
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
 }
 
 
@@ -947,7 +947,7 @@ select.ui.dropdown {
 .ui.dropdown .menu .right.menu {
   left: 100% !important;
   right: auto !important;
-  border-radius: 0.28571429rem !important;
+  border-radius: 0em !important;
 }
 
 /* Left Flyout Menu */
@@ -955,7 +955,7 @@ select.ui.dropdown {
 .ui.dropdown .menu .left.menu {
   left: auto !important;
   right: 100% !important;
-  border-radius: 0.28571429rem !important;
+  border-radius: 0em !important;
 }
 .ui.dropdown .item .left.dropdown.icon,
 .ui.dropdown .left.menu .item .dropdown.icon {
@@ -984,7 +984,7 @@ select.ui.dropdown {
   top: auto;
   bottom: 100%;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 
 /* Upward Sub Menu */
@@ -996,10 +996,10 @@ select.ui.dropdown {
 /* Active Upward */
 .ui.simple.upward.active.dropdown,
 .ui.simple.upward.dropdown:hover {
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;
+  border-radius: 0em 0em 0em 0em !important;
 }
 .ui.upward.dropdown.button:not(.pointing):not(.floating).active {
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  border-radius: 0em 0em 0em 0em;
 }
 
 /* Selection */
@@ -1014,13 +1014,13 @@ select.ui.dropdown {
 
 /* Active Upward */
 .ui.active.upward.selection.dropdown {
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem !important;
+  border-radius: 0em 0em 0em 0em !important;
 }
 
 /* Visible Upward */
 .ui.upward.selection.dropdown.visible {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem !important;
+  border-radius: 0em 0em 0em 0em !important;
 }
 
 /* Visible Hover Upward */
@@ -1183,11 +1183,11 @@ select.ui.dropdown {
   left: 0;
   right: auto;
   box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;
-  border-radius: 0.28571429rem !important;
+  border-radius: 0em !important;
 }
 .ui.floating.dropdown > .menu {
   margin-top: 0.5em !important;
-  border-radius: 0.28571429rem !important;
+  border-radius: 0em !important;
 }
 
 /*--------------
@@ -1197,7 +1197,7 @@ select.ui.dropdown {
 .ui.pointing.dropdown > .menu {
   top: 100%;
   margin-top: 0.78571429rem;
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
 }
 .ui.pointing.dropdown > .menu:after {
   display: block;
@@ -1340,7 +1340,7 @@ select.ui.dropdown {
   top: auto;
   bottom: 100%;
   margin: 0em 0em 0.78571429rem;
-  border-radius: 0.28571429rem;
+  border-radius: 0em;
 }
 .ui.upward.pointing.dropdown > .menu:after,
 .ui.upward.top.pointing.dropdown > .menu:after {
@@ -1434,9 +1434,3 @@ select.ui.dropdown {
   content: "\f0da";
 }
 */
-
-
-/*******************************
-        User Overrides
-*******************************/
-
