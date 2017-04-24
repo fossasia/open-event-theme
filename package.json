@@ -1,13 +1,13 @@
 {
-  "name": "open-event-frontend-theme",
-  "version": "1.0.0",
-  "description": "The official theme for the Open Event Frontend",
+  "name": "open-event-theme",
+  "version": "0.0.1",
+  "description": "The Open Event Standard Theme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/niranjan94/open-event-frontend-theme.git"
+    "url": "git+https://github.com/fossasia/open-event-theme.git"
   },
   "keywords": [
     "open",
@@ -18,9 +18,9 @@
   "author": "FOSSASIA",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/niranjan94/open-event-frontend-theme/issues"
+    "url": "https://github.com/fossasia/open-event-theme/issues"
   },
-  "homepage": "https://github.com/niranjan94/open-event-frontend-theme#readme",
+  "homepage": "https://github.com/fossasia/open-event-theme#readme",
   "dependencies": {
     "semantic-ui": "^2.2.10"
   }

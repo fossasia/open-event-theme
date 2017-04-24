@@ -1,6 +1,6 @@
 {
-  "name": "open-event-frontend-theme",
-  "description": "The official theme for the Open Event Frontend",
+  "name": "open-event-theme",
+  "description": "The Open Event Standard Theme",
   "main": "",
   "authors": [
     "FOSSASIA"
@@ -12,7 +12,7 @@
     "fossasia",
     "semantic"
   ],
-  "homepage": "https://github.com/niranjan94/open-event-frontend-theme",
+  "homepage": "https://github.com/fossasia/open-event-theme",
   "ignore": [
     "**/.*",
     "node_modules",
