@@ -1,21 +1,6 @@
 /*******************************
             Set-up
-*******************************/
-
-var
-  gulp         = require('gulp-help')(require('gulp')),
-
-  // read user config to know what task to load
-  config       = require('./tasks/config/user'),
-
-  // watch changes
-  watch        = require('./tasks/watch'),
-
-  // build all files
-  build        = require('./tasks/build'),
-  buildJS      = require('./tasks/build/javascript'),
-  buildCSS     = require('./tasks/build/css'),
-  buildAssets  = require('./tasks/build/assets'),
+*******************************  buildAssets  = require('./tasks/build/assets'),
 
   // utility
   clean        = require('./tasks/clean'),
