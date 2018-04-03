@@ -1,6 +1,6 @@
 {
   "name": "open-event-theme",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The Open Event Standard Theme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
     "url": "https://github.com/fossasia/open-event-theme/issues"
   },
   "homepage": "https://github.com/fossasia/open-event-theme#readme",
-  "dependencies": {
+  "devDependencies": {
     "semantic-ui": "^2.2.10"
   }
 }
