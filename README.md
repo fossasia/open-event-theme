@@ -43,7 +43,7 @@ npm install
 * [Build Tools](https://semantic-ui.com/introduction/build-tools.html)
 
 ## Projects using this theme
-- [Open Event Frontend](https://github.com/fossasia/open-event-frontend) - Deployed at [nextgen.eventyay.com](http://nextgen.eventyay.com)
+- [Open Event Frontend](https://github.com/fossasia/open-event-frontend) - Deployed at [next.eventyay.com](http://next.eventyay.com)
 
 ## License
 
