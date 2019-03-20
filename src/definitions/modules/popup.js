@@ -10,7 +10,7 @@
 
 ;(function ($, window, document, undefined) {
 
-"use strict";
+'use strict';
 
 window = (typeof window != 'undefined' && window.Math == Math)
   ? window
@@ -128,7 +128,7 @@ $.fn.popup = function(parameters) {
             $offsetParent = module.get.offsetParent();
             $popup.removeClass(className.loading);
             if(settings.movePopup && module.has.popup() && module.get.offsetParent($popup)[0] !== $offsetParent[0]) {
-              module.debug('Moving popup to the same offset parent as activating element');
+              module.debug('Moving popup to the same offset parent as target');
               $popup
                 .detach()
                 .appendTo($offsetParent)
@@ -360,7 +360,7 @@ $.fn.popup = function(parameters) {
 
         hideAll: function() {
           $(selector.popup)
-            .filter('.' + className.visible)
+            .filter('.' + className.popupVisible)
             .each(function() {
               $(this)
                 .data(metadata.activator)
@@ -415,7 +415,7 @@ $.fn.popup = function(parameters) {
         },
         supports: {
           svg: function() {
-            return (typeof SVGGraphicsElement === undefined);
+            return (typeof SVGGraphicsElement === 'undefined');
           }
         },
         animate: {
@@ -488,7 +488,7 @@ $.fn.popup = function(parameters) {
           },
           content: function() {
             $module.removeData(metadata.content);
-            return $module.data(metadata.content) || $module.attr('title') || settings.content;
+            return $module.data(metadata.content) || settings.content || $module.attr('title');
           },
           variation: function() {
             $module.removeData(metadata.variation);
@@ -502,9 +502,10 @@ $.fn.popup = function(parameters) {
           },
           calculations: function() {
             var
-              targetElement    = $target[0],
-              isWindow         = ($boundary[0] == window),
-              targetPosition   = (settings.inline || (settings.popup && settings.movePopup))
+              $popupOffsetParent = module.get.offsetParent($popup),
+              targetElement      = $target[0],
+              isWindow           = ($boundary[0] == window),
+              targetPosition     = (settings.inline || (settings.popup && settings.movePopup))
                 ? $target.position()
                 : $target.offset(),
               screenPosition = (isWindow)
@@ -548,6 +549,17 @@ $.fn.popup = function(parameters) {
                 height : $boundary.height()
               }
             };
+
+            // if popup offset context is not same as target, then adjust calculations
+            if($popupOffsetParent.get(0) !== $offsetParent.get(0)) {
+              var
+                popupOffset        = $popupOffsetParent.offset()
+              ;
+              calculations.target.top -= popupOffset.top;
+              calculations.target.left -= popupOffset.left;
+              calculations.parent.width = $popupOffsetParent.outerWidth();
+              calculations.parent.height = $popupOffsetParent.outerHeight();
+            }
 
             // add in container calcs if fluid
             if( settings.setFluidWidth && module.is.fluid() ) {
@@ -625,11 +637,11 @@ $.fn.popup = function(parameters) {
             }
             return distanceFromBoundary;
           },
-          offsetParent: function($target) {
+          offsetParent: function($element) {
             var
-              element = ($target !== undefined)
-                ? $target[0]
-                : $module[0],
+              element = ($element !== undefined)
+                ? $element[0]
+                : $target[0],
               parentNode = element.parentNode,
               $node    = $(parentNode)
             ;
@@ -637,14 +649,14 @@ $.fn.popup = function(parameters) {
               var
                 is2D     = ($node.css('transform') === 'none'),
                 isStatic = ($node.css('position') === 'static'),
-                isHTML   = $node.is('html')
+                isBody   = $node.is('body')
               ;
-              while(parentNode && !isHTML && isStatic && is2D) {
+              while(parentNode && !isBody && isStatic && is2D) {
                 parentNode = parentNode.parentNode;
                 $node    = $(parentNode);
                 is2D     = ($node.css('transform') === 'none');
                 isStatic = ($node.css('position') === 'static');
-                isHTML   = $node.is('html');
+                isBody   = $node.is('body');
               }
             }
             return ($node && $node.length > 0)
@@ -752,6 +764,18 @@ $.fn.popup = function(parameters) {
             target = calculations.target;
             popup  = calculations.popup;
             parent = calculations.parent;
+
+            if(module.should.centerArrow(calculations)) {
+              module.verbose('Adjusting offset to center arrow on small target element');
+              if(position == 'top left' || position == 'bottom left') {
+                offset += (target.width / 2)
+                offset -= settings.arrowPixelsFromEdge;
+              }
+              if(position == 'top right' || position == 'bottom right') {
+                offset -= (target.width / 2)
+                offset += settings.arrowPixelsFromEdge;
+              }
+            }
 
             if(target.width === 0 && target.height === 0 && !module.is.svg(target.element)) {
               module.debug('Popup target is hidden, no action taken');
@@ -986,28 +1010,38 @@ $.fn.popup = function(parameters) {
           },
           close: function() {
             if(settings.hideOnScroll === true || (settings.hideOnScroll == 'auto' && settings.on != 'click')) {
-              $scrollContext
-                .one(module.get.scrollEvent() + elementNamespace, module.event.hideGracefully)
-              ;
+              module.bind.closeOnScroll();
             }
-            if(settings.on == 'hover' && openedWithTouch) {
-              module.verbose('Binding popup close event to document');
-              $document
-                .on('touchstart' + elementNamespace, function(event) {
-                  module.verbose('Touched away from popup');
-                  module.event.hideGracefully.call(element, event);
-                })
-              ;
+            if(module.is.closable()) {
+              module.bind.clickaway();
             }
-            if(settings.on == 'click' && settings.closable) {
-              module.verbose('Binding popup close event to document');
-              $document
-                .on('click' + elementNamespace, function(event) {
-                  module.verbose('Clicked away from popup');
-                  module.event.hideGracefully.call(element, event);
-                })
-              ;
+            else if(settings.on == 'hover' && openedWithTouch) {
+              module.bind.touchClose();
             }
+          },
+          closeOnScroll: function() {
+            module.verbose('Binding scroll close event to document');
+            $scrollContext
+              .one(module.get.scrollEvent() + elementNamespace, module.event.hideGracefully)
+            ;
+          },
+          touchClose: function() {
+            module.verbose('Binding popup touchclose event to document');
+            $document
+              .on('touchstart' + elementNamespace, function(event) {
+                module.verbose('Touched away from popup');
+                module.event.hideGracefully.call(element, event);
+              })
+            ;
+          },
+          clickaway: function() {
+            module.verbose('Binding popup close event to document');
+            $document
+              .on('click' + elementNamespace, function(event) {
+                module.verbose('Clicked away from popup');
+                module.event.hideGracefully.call(element, event);
+              })
+            ;
           }
         },
 
@@ -1036,7 +1070,22 @@ $.fn.popup = function(parameters) {
           }
         },
 
+        should: {
+          centerArrow: function(calculations) {
+            return !module.is.basic() && calculations.target.width <= (settings.arrowPixelsFromEdge * 2);
+          },
+        },
+
         is: {
+          closable: function() {
+            if(settings.closable == 'auto') {
+              if(settings.on == 'hover') {
+                return false;
+              }
+              return true;
+            }
+            return settings.closable;
+          },
           offstage: function(distanceFromBoundary, position) {
             var
               offstage = []
@@ -1058,6 +1107,9 @@ $.fn.popup = function(parameters) {
           svg: function(element) {
             return module.supports.svg() && (element instanceof SVGGraphicsElement);
           },
+          basic: function() {
+            return $module.hasClass(className.basic);
+          },
           active: function() {
             return $module.hasClass(className.active);
           },
@@ -1068,7 +1120,7 @@ $.fn.popup = function(parameters) {
             return ($popup !== undefined && $popup.hasClass(className.fluid));
           },
           visible: function() {
-            return ($popup !== undefined && $popup.hasClass(className.visible));
+            return ($popup !== undefined && $popup.hasClass(className.popupVisible));
           },
           dropdown: function() {
             return $module.hasClass(className.dropdown);
@@ -1370,8 +1422,11 @@ $.fn.popup.settings = {
   // specify position to appear even if it doesn't fit
   lastResort     : false,
 
+  // number of pixels from edge of popup to pointing arrow center (used from centering)
+  arrowPixelsFromEdge: 20,
+
   // delay used to prevent accidental refiring of animations due to user error
-  delay        : {
+  delay : {
     show : 50,
     hide : 70
   },
@@ -1414,14 +1469,16 @@ $.fn.popup.settings = {
   },
 
   className   : {
-    active    : 'active',
-    animating : 'animating',
-    dropdown  : 'dropdown',
-    fluid     : 'fluid',
-    loading   : 'loading',
-    popup     : 'ui popup',
-    position  : 'top left center bottom right',
-    visible   : 'visible'
+    active       : 'active',
+    basic        : 'basic',
+    animating    : 'animating',
+    dropdown     : 'dropdown',
+    fluid        : 'fluid',
+    loading      : 'loading',
+    popup        : 'ui popup',
+    position     : 'top left center bottom right',
+    visible      : 'visible',
+    popupVisible : 'visible'
   },
 
   selector    : {

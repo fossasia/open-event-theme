@@ -56,7 +56,7 @@
 @itemVerticalPadding: @mini;
 @itemHorizontalPadding: @large;
 @itemPadding: @itemVerticalPadding @itemHorizontalPadding;
-@itemFontWeight: normal;
+@itemFontWeight: @normal;
 @itemLineHeight: 1em;
 @itemLineHeightOffset: (@itemLineHeight - 1em);
 @itemTextTransform: none;
@@ -74,7 +74,7 @@
 /* Menu Header */
 @menuHeaderColor: @darkTextColor;
 @menuHeaderFontSize: @relative11px;
-@menuHeaderFontWeight: bold;
+@menuHeaderFontWeight: @bold;
 @menuHeaderTextTransform: uppercase;
 @menuHeaderMargin: 1rem 0rem 0.75rem;
 @menuHeaderPadding: 0em @itemHorizontalPadding;
@@ -94,6 +94,7 @@
 
 /* Menu Image */
 @menuImageMaxHeight: 2em;
+@menuImageVerticalMargin: -(@menuImageMaxHeight - 1em) / 2;
 
 /* Item Sub-Element */
 @itemElementFloat: none;
@@ -111,7 +112,7 @@
 
 /* Message */
 @messagePadding: @selectionItemPadding;
-@messageFontWeight: normal;
+@messageFontWeight: @normal;
 @messageColor: @unselectedTextColor;
 
 /* Floated Content */
@@ -159,7 +160,7 @@
 @selectionIconZIndex: 3;
 @selectionIconHitbox: @selectionVerticalPadding;
 @selectionIconMargin: -@selectionIconHitbox;
-@selectionIconPadding: @selectionIconHitbox;
+@selectionIconPadding: @selectionIconHitbox / @dropdownIconSize;
 @selectionIconTransition: opacity @defaultDuration @defaultEasing;
 
 @selectionMenuBorderRadius: 0em 0em @borderRadius @borderRadius;
@@ -197,7 +198,7 @@
 @selectionFocusMenuBoxShadow: @raisedShadow;
 
 /* Visible */
-@selectionVisibleTextFontWeight: normal;
+@selectionVisibleTextFontWeight: @normal;
 @selectionVisibleTextColor: @hoveredTextColor;
 
 @selectionVisibleBorderColor: @focusedFormMutedBorderColor;
@@ -210,7 +211,7 @@
 @selectionActiveHoverMenuBoxShadow: @selectionVisibleMenuBoxShadow;
 
 @selectionVisibleConnectingBorder: 0em;
-@selectionVisibleIconOpacity: 1;
+@selectionVisibleIconOpacity: '';
 
 /*--------------
      Search
@@ -231,9 +232,9 @@
 @searchWidescreenMaxMenuHeight: @selectionWidescreenMaxMenuHeight;
 
 /* Inline */
-@inlineIconMargin: 0em @relative7px 0em @relative3px;
+@inlineIconMargin: 0em @relative3px 0em @relative3px;
 @inlineTextColor: inherit;
-@inlineTextFontWeight: bold;
+@inlineTextFontWeight: @bold;
 @inlineMenuDistance: @relative3px;
 @inlineMenuBorderRadius: @borderRadius;
 
@@ -293,7 +294,7 @@
 @activeItemZIndex: @menuZIndex + 1;
 @activeItemBackground: transparent;
 @activeItemBoxShadow: none;
-@activeItemFontWeight: bold;
+@activeItemFontWeight: @bold;
 @activeItemColor: @selectedTextColor;
 
 /* Selected */
@@ -307,6 +308,10 @@
 @errorItemTextColor: @errorTextColor;
 @errorItemHoverBackground: #FFF2F2;
 @errorItemActiveBackground: #FDCFCF;
+
+/* Clearable */
+@clearableIconOpacity: 0.8;
+@clearableIconActiveOpacity: 1;
 
 /*-------------------
       Variations
@@ -341,10 +346,11 @@
 
 /* Flyout Direction */
 @leftMenuDropdownIconFloat: left;
-@leftMenuDropdownIconMargin: @itemLineHeightOffset @itemElementDistance 0em 0em;
+@leftMenuDropdownIconMargin: @itemLineHeightOffset 0em 0em 0em;
 
 /* Left */
 @leftSubMenuBorderRadius: @borderRadius;
+@leftSubMenuMargin: 0em @subMenuDistanceAway 0em 0em;
 
 /* Simple */
 @simpleTransitionDuration: @defaultDuration;
@@ -361,13 +367,13 @@
 
 @pointingArrowBackground: @white;
 @pointingArrowZIndex: 2;
-@pointingArrowBoxShadow: -@menuBorderWidth -@menuBorderWidth 0px @menuBorderWidth @menuBorderColor;
+@pointingArrowBoxShadow: -@menuBorderWidth -@menuBorderWidth 0px 0px @menuBorderColor;
 @pointingArrowSize: @relative7px;
 
 @pointingMenuDistance: @mini;
 @pointingMenuBorderRadius: @borderRadius;
-@pointingArrowBoxShadow: -@menuBorderWidth -@menuBorderWidth 0px @menuBorderWidth @menuBorderColor;
+@pointingArrowBoxShadow: -@menuBorderWidth -@menuBorderWidth 0px 0px @menuBorderColor;
 
 /* Pointing Upward */
 @pointingUpwardMenuBorderRadius: @borderRadius;
-@pointingUpwardArrowBoxShadow: @menuBorderWidth @menuBorderWidth 0px @menuBorderWidth @menuBorderColor;
+@pointingUpwardArrowBoxShadow: @menuBorderWidth @menuBorderWidth 0px 0px @menuBorderColor;

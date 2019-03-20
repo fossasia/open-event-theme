@@ -261,6 +261,10 @@ i.flag.eh:before,
 i.flag.western.sahara:before {
   background-position: 0px -1664px;
 }
+i.flag.gb.eng:before,
+i.flag.england:before {
+  background-position: 0px -1690px;
+}
 i.flag.er:before,
 i.flag.eritrea:before {
   background-position: 0px -1716px;
@@ -306,6 +310,7 @@ i.flag.gabon:before {
   background-position: -36px 0px;
 }
 i.flag.gb:before,
+i.flag.uk:before,
 i.flag.united.kingdom:before {
   background-position: -36px -26px;
 }

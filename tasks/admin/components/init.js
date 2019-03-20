@@ -65,7 +65,7 @@ module.exports = function(callback) {
     }
 
     var
-      component            = release.components[index]
+      component            = release.components[index],
       outputDirectory      = path.resolve(release.outputRoot + component),
       capitalizedComponent = component.charAt(0).toUpperCase() + component.slice(1),
       repoName             = release.componentRepoRoot + capitalizedComponent,
@@ -74,7 +74,7 @@ module.exports = function(callback) {
       pullOptions          = { args: '-q', cwd: outputDirectory, quiet: true },
       resetOptions         = { args: '-q --hard', cwd: outputDirectory, quiet: true },
 
-      gitURL               = 'https://github.com/' + release.org + '/' + repoName + '.git',
+      gitURL               = 'git@github.com:' + release.org + '/' + repoName + '.git',
       repoURL              = 'https://github.com/' + release.org + '/' + repoName + '/',
       localRepoSetup       = fs.existsSync(path.join(outputDirectory, '.git'))
     ;
