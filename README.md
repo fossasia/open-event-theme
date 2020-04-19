@@ -2,8 +2,7 @@
 # Open Event Theme
 
 [![Gitter](https://img.shields.io/badge/chat-on%20gitter-ff006f.svg?style=flat-square)](https://gitter.im/fossasia/open-event-frontend)
-[![Bower](https://img.shields.io/bower/v/open-event-theme.svg?style=flat-square)](https://github.com/fossasia/open-event-theme/releases/latest)
-[![NPM](https://img.shields.io/npm/v/open-event-theme.svg?style=flat-square)](https://www.npmjs.com/package/open-event-theme)
+[![NPM](https://img.shields.io/npm/v/@open-event/theme.svg?style=flat-square)](https://www.npmjs.com/package/@open-event/theme)
 
 > The Open Event Standard Theme
 
@@ -15,14 +14,11 @@ The Open Event Theme is the standard theme component of the Open Event project. 
 The theme package can be installed via bower (or) NPM (or) Yarn. 
 
 ```bash
-# With bower
-bower install open-event-theme --save
-
 # With NPM
-npm install open-event-theme --save
+npm install @open-event/theme --save
 
 # With Yarn
-yarn add open-event-theme
+yarn add --dev @open-event/theme
 ```
 
 ### Development
@@ -43,7 +39,7 @@ npm install
 * [Build Tools](https://semantic-ui.com/introduction/build-tools.html)
 
 ## Projects using this theme
-- [Open Event Frontend](https://github.com/fossasia/open-event-frontend) - Deployed at [next.eventyay.com](http://next.eventyay.com)
+- [Open Event Frontend](https://github.com/fossasia/open-event-frontend) - Deployed at [eventyay.com](https://eventyay.com)
 
 ## License
 

@@ -1,5 +1,5 @@
 {
-  "name": "open-event-theme",
+  "name": "@open-event/theme",
   "version": "0.0.6",
   "description": "The Open Event Standard Theme",
   "scripts": {
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/fossasia/open-event-theme#readme",
   "devDependencies": {
-    "semantic-ui": "^2.2.10"
+    "semantic-ui": "^2.4.2"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
   }
 }
