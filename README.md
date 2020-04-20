@@ -32,6 +32,13 @@ cd open-event-theme
 npm install
 ```
 
+### Publishing
+
+```bash
+yarn gulp build
+npm publish --access public
+```
+
 ## Further Reading / Useful Links
 
 * [Semantic UI](https://semantic-ui.com/)
