@@ -1,3 +1,6 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@googleFontSizes     : '100,300,400,700,900';
+@defaultBorderRadius : 0em;
