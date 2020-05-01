@@ -3,4 +3,5 @@
 *******************************/
 
 @googleFontSizes     : '100,300,400,700,900';
+@absoluteBorderRadius: 0em;
 @defaultBorderRadius : 0em;
