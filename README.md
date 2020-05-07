@@ -23,7 +23,7 @@ yarn add --dev @open-event/theme
 
 ### Development
 
-Interested in making this theme even cooler ? Feel free to send a PR. 
+Interested in making this theme even better ? Feel free to send a PR. 
 You can easily start contributing.
 
 ```bash
