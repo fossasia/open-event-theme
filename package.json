@@ -1,6 +1,6 @@
 {
   "name": "@open-event/theme",
-  "version": "0.2.1-rounded",
+  "version": "0.2.2",
   "description": "The Open Event Standard Theme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

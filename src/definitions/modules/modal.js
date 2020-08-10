@@ -240,7 +240,9 @@ $.fn.modal = function(parameters) {
             });
           },
           preventScroll: function(event) {
-            event.preventDefault();
+            if (event.target.className.indexOf('dimmer') !== -1) {
+              event.preventDefault();
+            }
           },
           deny: function() {
             if(ignoreRepeatedEvents || settings.onDeny.call(element, $(this)) === false) {
